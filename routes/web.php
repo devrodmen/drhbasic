@@ -23,8 +23,10 @@ Route::get('/home', 'HomeController@index')->name('home');
  * Rutas para Permisos
  */
 Route::get('/acl', 'AclController@index')->name('acl');
-Route::get('/users', 'AclController@users')->name('users');
+Route::get('/users', 'AclController@users')->name('users')->middleware('auth');;
 Route::get('/roles', 'AclController@roles')->name('roles');
+Route::get('/test', 'HomeController@test')->name('test');
+
 
 /**
  * Rutas para Construir DataTable
